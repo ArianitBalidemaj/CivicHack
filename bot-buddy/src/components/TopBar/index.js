@@ -18,6 +18,7 @@ import {
   faClose,
   faFolderOpen,
   faBriefcase,
+  faGear
 } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react';
 
@@ -27,14 +28,14 @@ const TopBar = () => {
     
     return (
     <div className='navBar'>
-        <Link className='logo' to='/Portfolio'>
+        <Link className='logo' to='/Home'>
             {/* <img src = {LogoAB} alt='logo' /> */}
         </Link>
         <nav className={showNav ? 'mobile-show' : ''}>
             <NavLink 
             exact="true" 
             activeclassname="active" 
-            to="/Portfolio"
+            to="/Home"
             onClick={() => setShowNav(false)}>
                 <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
             </NavLink>
@@ -42,19 +43,19 @@ const TopBar = () => {
             <NavLink 
             exact="true" 
             activeclassname="active" 
-            className="work-link" 
-            to="/work"
+            className="contact-link" 
+            to="/Chat"
             onClick={() => setShowNav(false)}>
-                <FontAwesomeIcon icon={faBriefcase} color="#4d4d4e" />
+                <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
             </NavLink>
 
             <NavLink 
             exact="true" 
             activeclassname="active" 
-            className="contact-link" 
-            to="/contact"
+            className="work-link" 
+            to="/Settings"
             onClick={() => setShowNav(false)}>
-                <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+                <FontAwesomeIcon icon={faGear} color="#4d4d4e" />
             </NavLink>
 
             <FontAwesomeIcon

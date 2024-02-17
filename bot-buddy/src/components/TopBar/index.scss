@@ -29,25 +29,28 @@
       display: flex; /* Changed display to flex */
       justify-content: space-around; /* Horizontally distribute items evenly */
       align-items: center; /* Vertically center items */
-      width: 100%;
+      width: 300px;
+      height: 100%;
+
       
     
         a {
           font-size: 22px;
-          color: #4d4d4e;
+          color: #F5F5F5;
           display: block;
           line-height: 51px;
           height: 51px;
           position: relative;
           text-decoration: none;
           padding: 0 10px; 
+
     
           i {
             transition: all 0.3s ease-out;
           }
     
           &:hover {
-            color: #D2B48C;
+            color: #F5F5F5;
     
             svg {
               opacity: 0;
@@ -81,18 +84,19 @@
           }
         }
     
-        a.about-link {
+        a.work-link {
           &:after {
-            content: 'ABOUT';
+            content: 'SETTINGS';
 
           }
         }
     
         a.contact-link {
           &:after {
-            content: 'CONTACT';
+            content: 'CHAT';
           }
         }
+
         a.active {
             svg {
               color: #D2B48C;
