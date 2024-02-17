@@ -1,5 +1,5 @@
 import './index.scss'
-import LogoAB from '../../assets/logos/logo.png'
+// import LogoAB from '../../assets/logos/logo.png'
 import { Link, NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -28,7 +28,7 @@ const TopBar = () => {
     return (
     <div className='navBar'>
         <Link className='logo' to='/Portfolio'>
-            <img src = {LogoAB} alt='logo' />
+            {/* <img src = {LogoAB} alt='logo' /> */}
         </Link>
         <nav className={showNav ? 'mobile-show' : ''}>
             <NavLink 
