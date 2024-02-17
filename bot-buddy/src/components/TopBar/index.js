@@ -28,7 +28,7 @@ const TopBar = () => {
     
     return (
     <div className='navBar'>
-        <Link className='logo' to='/Home'>
+        <Link className='logo' to='/'>
             {/* <img src = {LogoAB} alt='logo' /> */}
         </Link>
         <nav className={showNav ? 'mobile-show' : ''}>
