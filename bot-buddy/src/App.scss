@@ -28,6 +28,7 @@ textarea {
   position: absolute;
   left: 0;
   right: 0;
+  text-align: center;
   margin: auto;
   top: 0;
   bottom: 0;
@@ -35,4 +36,5 @@ textarea {
   height: 50px;
   animation: fadeOut 1s 1s;
   animation-fill-mode: forwards;
+
 }
