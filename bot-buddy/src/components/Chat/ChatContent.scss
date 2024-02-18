@@ -1,0 +1,16 @@
+.chat-content {
+    background-color: black;  
+    padding: 20px;  
+    border-radius: 8px; 
+  
+    .chat-header {
+      font-size: 1.5rem;  
+      font-weight: bold;  
+      margin-bottom: 10px;  
+    }
+  
+    .empty-chat {
+      font-size: 1.2rem;  
+      color: #777;  
+    }
+  }

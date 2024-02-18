@@ -1,0 +1,36 @@
+.sidebar 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: #36454f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+  
+    .sidebar-top-heading 
+    {
+      font-size: 2.0rem;
+      text-align: center;
+      margin: 10px 0;
+    }
+  
+    .chat-boxes 
+    {
+      overflow-y: auto;
+      padding: 20px;
+    }
+  
+    .new-chat-button 
+    {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px;
+      cursor: pointer;
+      text-align: center;
+      margin-top: auto; 
+    }
+}
