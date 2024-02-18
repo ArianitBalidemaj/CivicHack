@@ -1,3 +1,4 @@
+
 import './App.scss';
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
@@ -11,7 +12,6 @@ import SignUp from './components/SignUp';
 import './components/Home/index.scss';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-
 
 function App() {
   return (
