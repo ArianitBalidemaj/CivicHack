@@ -8,7 +8,8 @@ import Settings from './components/Settings';
 import Home from './components/Home';
 import Chat from './components/Chat';
 import './components/Home/index.scss';
-
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 function App() {
   return (

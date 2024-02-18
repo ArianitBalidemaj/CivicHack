@@ -1,16 +1,40 @@
-// Home.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth'; // If you need authentication
+import { getFirestore } from 'firebase/firestore';
 
+// Initialize Firebase app
+const firebaseConfig = {
+    apiKey: 'your-api-key',
+    authDomain: 'your-auth-domain',
+    projectId: 'your-project-id',
+    storageBucket: 'your-storage-bucket',
+    messagingSenderId: 'your-messaging-sender-id',
+    appId: 'your-app-id',
+    measurementId: 'your-measurement-id' // Optional, only if you're using Firebase Analytics
+};
+
+const app = initializeApp(firebaseConfig);
 
 const Home = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    useEffect(() => {
+        const unsubscribe = getAuth(app).onAuthStateChanged((user) => {
+            setIsAuthenticated(!!user);
+        });
+
+        return () => unsubscribe();
+    }, []);
+
     return (
         <div className='home-box'>
             <div className="home-content">
                 <h1 className="h1">BotBuddy</h1>
                 <About />
-                <ChatButton isAuthenticated={true} />
+                <ChatButton isAuthenticated={isAuthenticated} />
             </div>
         </div>
     );
