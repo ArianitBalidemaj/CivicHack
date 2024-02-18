@@ -2,7 +2,12 @@
 import React from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
-
+// Import the firebase from the js file
+import { app, auth } from '../../firebase.js';
+import { Navigate } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+// import current user
 
 const Home = () => {
     return (
@@ -10,7 +15,7 @@ const Home = () => {
             <div className="home-content">
                 <h1 className="h1">BotBuddy</h1>
                 <About />
-                <ChatButton isAuthenticated={true} />
+                <ChatButton />
             </div>
         </div>
     );
@@ -25,14 +30,23 @@ const About = () => {
     )
 }
 
-const ChatButton = ({ isAuthenticated }) => {
+const ChatButton = () => {
+
+    // Check if the user is authenticated and logged in
+    const navigate = useNavigate('');
+
     const handleClick = () => {
-        if (isAuthenticated) {
-            window.location.href = '/chat';
+        const user = auth.currentUser;
+        console.log(user);
+        if (user) {
+            navigate('/Chat');
+            console.log("User is signed in");
         } else {
-            window.location.href = '/login';
+            navigate('/Login');
+            console.log("User is not signed in");
         }
-    };
+    }
+    
 
     return (
         <button className="chat-button" onClick={handleClick}>
@@ -40,5 +54,7 @@ const ChatButton = ({ isAuthenticated }) => {
         </button>
     );
 };
+
+
 
 export default Home;
