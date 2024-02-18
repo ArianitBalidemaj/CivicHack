@@ -30,6 +30,12 @@ const ChatComponent = () => {
                     <input className="submit" type="text" placeholder="Random Name" onChange={(e) => {setUsername(e.target.value)}}/>
                     <input className="submit" type="text" placeholder="Room ID" onChange={(e) => {setRoom(e.target.value)}}/>
                     <button className="submit" onClick={joinRoom}>Join</button>
+                    <div className="radio-container">
+                        <input type="radio" id="radio1" name="radios" />
+                        <label htmlFor="radio1">Listern</label>
+                        <input type="radio" id="radio2" name="radios" />
+                        <label htmlFor="radio2">Speaker</label>
+                    </div>
                 </div>
             ) : (
                 <ChatRoom socket={socket} username={username} room={room}/>

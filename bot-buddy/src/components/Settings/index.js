@@ -31,7 +31,8 @@ const Settings = () => {
 
   return (
     <div className="settings">
-      <h1>Settings</h1>
+      <div className="text1">Settings</div>
+      <div className="underline"></div>
       <ul>
         <li>
           <button onClick={handleChangePassword}>Change Password</button>
