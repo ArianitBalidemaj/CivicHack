@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import './App.scss';
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
@@ -5,8 +6,16 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Login from './components/Login'
 import Settings from './components/Settings';
+=======
+import React from 'react';
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+>>>>>>> Stashed changes
 import Home from './components/Home';
+import Settings from './components/Settings';
 import Chat from './components/Chat';
+<<<<<<< Updated upstream
 import SignUp from './components/SignUp';
 import './components/Home/index.scss';
 import firebase from 'firebase/app';
@@ -25,6 +34,20 @@ function App() {
       <Route path="SignUp" element={<SignUp />} />
     </Routes>
     </>
+=======
+
+function App() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="Home" index element={<Home />} />
+          <Route path="Settings" element={<Settings />} />
+          <Route path="Chat" element={<Chat />} />
+        </Route>
+      </Routes>
+    </div>
+>>>>>>> Stashed changes
   );
 }
 
