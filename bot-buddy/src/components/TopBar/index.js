@@ -21,10 +21,29 @@ import {
   faGear
 } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react';
+import { app, auth } from '../../firebase.js';
+import { Navigate } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 
 const TopBar = () => {
     const [showNav, setShowNav] = useState(false);
+
+    const navigate = useNavigate('');
+
+    const handleClick = () => {
+        setShowNav(false)
+        const user = auth.currentUser;
+        console.log(user);
+        if (user) {
+            navigate('/Chat');
+            console.log("User is signed in");
+        } else {
+            navigate('/Login');
+            console.log("User is not signed in");
+        }
+    }
     
     return (
     <div className='navBar'>
@@ -36,7 +55,7 @@ const TopBar = () => {
             exact="true" 
             activeclassname="active" 
             to="/Home"
-            onClick={() => setShowNav(false)}>
+            onClick={handleClick}>
                 <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
             </NavLink>
 
@@ -45,7 +64,7 @@ const TopBar = () => {
             activeclassname="active" 
             className="contact-link" 
             to="/Chat"
-            onClick={() => setShowNav(false)}>
+            onClick={handleClick}>
                 <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
             </NavLink>
 
@@ -54,12 +73,12 @@ const TopBar = () => {
             activeclassname="active" 
             className="work-link" 
             to="/Settings"
-            onClick={() => setShowNav(false)}>
+            onClick={handleClick}>
                 <FontAwesomeIcon icon={faGear} color="#4d4d4e" />
             </NavLink>
 
             <FontAwesomeIcon
-            onClick={() => setShowNav(false)} 
+            onClick={handleClick} 
             icon={faClose}
             color="#D2B48C"
             size="3x"
