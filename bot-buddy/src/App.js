@@ -1,5 +1,5 @@
 import './App.scss';
-import { Routes , Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -8,11 +8,11 @@ import Settings from './components/Settings';
 import Home from './components/Home';
 import Chat from './components/Chat';
 import SignUp from './components/SignUp';
-
+import './components/Home/index.scss';
 
 
 function App() {
-  return ( 
+  return (
     <>
     <Routes>
       <Route path="/" element={<Layout />}>

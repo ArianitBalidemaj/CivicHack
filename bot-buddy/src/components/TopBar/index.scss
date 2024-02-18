@@ -5,147 +5,172 @@
   position: absolute;
   top: 0;
   left: 0;
-  display: flex; /* Use flexbox */
-  align-items: center; /* Vertically center items */
-  justify-content: space-between; /* Horizontally distribute items */
+  display: flex;
+  /* Use flexbox */
+  align-items: center;
+  /* Vertically center items */
+  justify-content: space-between;
+  /* Horizontally distribute items */
   z-index: 3;
-  
-    .logo {
+
+  .logo {
+    display: block;
+    padding: 8px 0;
+
+    img {
       display: block;
-      padding: 8px 0;
-  
-      img {
+      margin: 8px auto;
+      width: 65px;
+      height: auto;
+
+      &.sub-logo {
+        width: 10px;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    /* Changed display to flex */
+    justify-content: space-around;
+    /* Horizontally distribute items evenly */
+    align-items: center;
+    /* Vertically center items */
+    width: 300px;
+    height: 100%;
+
+
+
+    a {
+      font-size: 22px;
+      color: #F5F5F5;
+      display: block;
+      line-height: 51px;
+      height: 51px;
+      position: relative;
+      text-decoration: none;
+      padding: 0 10px;
+
+
+      i {
+        transition: all 0.3s ease-out;
+      }
+
+      &:hover {
+        color: white;
+
+        svg {
+          opacity: 0;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &:after {
+        content: '';
+        font-size: 9px;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
         display: block;
-        margin: 8px auto;
-        width: 65px;
-        height: auto;
-  
-        &.sub-logo {
-          width: 10px;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+        // center the text
+        left: 0%;
+      }
+
+      &:first-child {
+        &:after {
+          content: 'HOME';
         }
       }
     }
-    nav {
-      display: flex; /* Changed display to flex */
-      justify-content: space-around; /* Horizontally distribute items evenly */
-      align-items: center; /* Vertically center items */
-      width: 300px;
-      height: 100%;
 
-      
-    
-        a {
-          font-size: 22px;
-          color: #F5F5F5;
-          display: block;
-          line-height: 51px;
-          height: 51px;
-          position: relative;
-          text-decoration: none;
-          padding: 0 10px; 
+    a.work-link {
+      &:after {
+        content: 'SETTINGS';
 
-    
-          i {
-            transition: all 0.3s ease-out;
-          }
-    
-          &:hover {
-            color: #F5F5F5;
-    
-            svg {
-              opacity: 0;
-            }
-    
-            &:after {
-              opacity: 1;
-            }
-          }
-    
-          &:after {
-            content: '';
-            font-size: 9px;
-            letter-spacing: 2px;
-            position: absolute;
-            bottom: 0;
-            display: block;
-            width: 100%;
-            text-align: center;
-            opacity: 0;
-            -webkit-transition: all 0.3s ease-out;
-            transition: all 0.3s ease-out;
-            // center the text
-            left: 0%;
-          }
-    
-          &:first-child {
-            &:after {
-              content: 'HOME';
-            }
-          }
-        }
-    
-        a.work-link {
-          &:after {
-            content: 'SETTINGS';
-
-          }
-        }
-    
-        a.contact-link {
-          &:after {
-            content: 'CHAT';
-          }
-        }
-
-        a.active {
-            svg {
-              color: #D2B48C;
-            }
-        }
+      }
     }
-    ul {
-        position: absolute;
-        bottom: 20px;
-        width: 100%;
+
+    a.contact-link {
+      &:after {
+        content: 'CHAT';
+      }
+    }
+
+    a.active {
+      svg {
+        color: white;
+      }
+    }
+  }
+
+  ul {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+
+    li {
+      a {
+        padding: 7px 0;
         display: block;
-        padding: 0;
-        list-style: none;
-        text-align: center;
-        margin: 0;
-    
-        li {
-          a {
-            padding: 7px 0;
-            display: block;
-            font-size: 15px;
-            line-height: 16px;
-            color: #4d4d4e;
-          }
-    
-          &:hover {
-            .anchor-icon {
-              color: #D2B48C;
-            }
-          }
+        font-size: 15px;
+        line-height: 16px;
+        color: #4d4d4e;
+      }
+
+      &:hover {
+        .anchor-icon {
+          color: white;
         }
+      }
     }
+  }
 }
 
 .hamburger-icon,
-.close-icon{
-  display:none;
+.close-icon {
+  display: none;
 }
 
 @media screen and (max-width: 1200px) {
 
-    .navBar{
-      background: transparent;
-      position: initial;
-      height: auto;
-      min-height: auto;
+  .navBar {
+    background: transparent;
+    position: initial;
+    height: auto;
+    min-height: auto;
 
-      ul, nav {
-        display: none;
+    ul,
+    nav {
+      display: none;
+    }
+
+    nav {
+      width: 100%;
+      height: 100%;
+      background-color: #4CAF50;
+      top: 0;
+      left: 0;
+      position: fixed;
+      z-index: 2;
+      margin: 0;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       nav {
@@ -157,6 +182,7 @@
         position: fixed;
         z-index:2;
         margin: 0;
+      }
 
         a {
           display: flex;
@@ -178,15 +204,21 @@
         &.mobile-show {
           display: block;
         }
-      }
-
-      .hamburger-icon,
-      .close-icon{
-        display:block;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-      }
+      a:after {
+        opacity: 1;
+        position: initial;
+        width: auto;
+        margin-left: 10px;
+      } 
     }
-  
+
+    .hamburger-icon,
+    .close-icon {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+  }
+
 }
