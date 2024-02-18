@@ -6,17 +6,16 @@ import passwordIcon from "../assets/logos/password.png";
 import emailIcon from "../assets/logos/email.png";
 import { useState } from "react";
 import { app, auth } from "../../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 
+const SignUp = () => {
 
-const Login = () => {
-
-    const [action,setAction] = useState("Login");
+    const [action,setAction] = useState("Sign Up");
     
     const handleSignUpClick = () => {
-        window.location.href = "/SignUp";
+        window.location.href = "/Login";
       };
 
     const [email, setEmail] = useState("");
@@ -24,17 +23,19 @@ const Login = () => {
     const [showSuccessModal, setShowSuccessModal] = useState(false);
     const navigate = useNavigate('');
 
-    const signIn = (e) => {
-        e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-            // console.log(userCredential);
+
+    const signUp = (e) => {
+        e.preventDefault(); // Added this line to prevent default form submission behavior
+        createUserWithEmailAndPassword(auth, email, password) // Changed the usage of createUserWithEmailAndPassword
+        .then((userCredential) => {
+            console.log(userCredential);
             setShowSuccessModal(true);
-            navigate('/Chat');
+            navigate('/Login');
         })
         .catch((error) => {
-            // console.log(error);
+            console.log(error);
         });
-    }
+    };
 
     return (
         <div className="container-head">
@@ -42,15 +43,15 @@ const Login = () => {
                 <div className="text">{action}</div>
                 <div className="underline"></div>
             </div>
-            <form onSubmit={signIn}>
+            <form onSubmit={signUp}>
             <div className="Inputs">
                 {action==="Login"?<div></div>:<div className="input">
                     <img src={userIcon} alt="" />
-                    <input type="text" placeholder="Name" />
+                    <input type="text" placeholder="Name"/>
                 </div>}
                 <div className="input">
                     <img src={emailIcon} alt="" />
-                    <input type="email" placeholder="Email" value = {email} onChange= {(e)=> setEmail(e.target.value)} />
+                    <input type="email" placeholder="Email" value = {email} onChange= {(e)=> setEmail(e.target.value)}/>
                 </div>
                 <div className="input">
                     <img src={passwordIcon} alt="" />
@@ -62,8 +63,8 @@ const Login = () => {
                 </div>}
 
             <div className="submit-container">
-                <button className={"submit"} onClick={handleSignUpClick}>Sign Up</button>
-                <button className={"submit"} onClick={()=>{setAction("Login")}}>{action === "SignUp" ? "Login" : "Sign In"}</button>
+                <button className={"submit"} onClick={()=>{setAction("Sign Up")}}>{action === "SignUp" ? "Sign Up" : "Submit"}</button>
+                <button className={"submit"} onClick={handleSignUpClick}>Login</button>
             </div>
             </form>
             {showSuccessModal && (
@@ -78,4 +79,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default SignUp;

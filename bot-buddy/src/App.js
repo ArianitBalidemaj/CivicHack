@@ -7,6 +7,7 @@ import Login from './components/Login'
 import Settings from './components/Settings';
 import Home from './components/Home';
 import Chat from './components/Chat';
+import SignUp from './components/SignUp';
 
 
 
@@ -19,6 +20,8 @@ function App() {
         <Route path="Settings" element={<Settings />} />
         <Route path="Chat" element={<Chat />} />
       </Route>
+      <Route path="Login" element={<Login />} />
+      <Route path="SignUp" element={<SignUp />} />
     </Routes>
     </>
   );
