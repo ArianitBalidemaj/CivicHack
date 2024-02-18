@@ -6,6 +6,7 @@ import { app, auth } from '../../firebase.js';
 import { Navigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { getAuth } from 'firebase/auth';
 
 const Home = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
