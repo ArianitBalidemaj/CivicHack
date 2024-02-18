@@ -17,7 +17,7 @@ const Sidebar = ({ onChatSelect }) => {
   const handleChatClick = (id) => {
     if (onChatSelect) {
       onChatSelect(id);
-    };
+    }
   };
 
   const calculateChatBoxesHeight = () => {
@@ -35,7 +35,7 @@ const Sidebar = ({ onChatSelect }) => {
             key={chatBox.id}
             id={chatBox.id}
             onClose={() => handleChatClose(chatBox.id)}
-            onChatSelect={() => handleChatClick(chatBox.id)} 
+            onChatSelect={() => handleChatClick(chatBox.id)}
           />
         ))}
       </div>
