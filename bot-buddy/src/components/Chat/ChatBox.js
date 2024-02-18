@@ -22,6 +22,7 @@ const ChatBox = ({ chatId, onClose, onChatSelect }) => {
 
   return (
     <div className="chat-box" onClick={handleChatClick}>
+<<<<<<< Updated upstream
       <span className="chat-text">Chat {chatId}</span>
       <div className="action-buttons">
         <button className="report-button" onClick={handleReportClick}>
@@ -31,6 +32,13 @@ const ChatBox = ({ chatId, onClose, onChatSelect }) => {
           X
         </button>
       </div>
+=======
+      <span className="chat-title">{chatId}</span>
+      <button className="close-button" onClick={() => onClose(chatId)}>
+        {/* Add your close button content */}
+        X
+      </button>
+>>>>>>> Stashed changes
     </div>
   );
 }

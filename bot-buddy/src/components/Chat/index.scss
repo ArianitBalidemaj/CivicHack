@@ -1,8 +1,9 @@
 .submit-container {
     display: flex;
-    justify-content: flex-end; /* Align items to the right */
-    gap: 30px;
-    margin: 60px auto;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+
 
     .submit {
         display: flex;
@@ -28,3 +29,8 @@
         transform: scale(1.1);
     }
 }
+
+  .join-form {
+    text-align: center;
+  }
+  

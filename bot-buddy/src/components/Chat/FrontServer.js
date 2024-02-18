@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 import './index.scss'
 import ChatRoom from './ChatRoom';
 
-
+// Establish the socket connection
 const socket = io.connect('http://localhost:3005/Chat');
 
 // Component where you establish the socket connection
@@ -21,23 +21,21 @@ const ChatComponent = () => {
         }
     }
 
-
-  return (
-    <div className="submit-container">
-    {!showChat ? (
-    <div>
-        <h1>Join A Chat</h1>
-        <br />
-        <input className="submit" type="text" placeholder="Random Name" onChange={(e) => {setUsername(e.target.value)}}/>
-        <input className="submit" type="text" placeholder="Room ID" onChange={(e) => {setRoom(e.target.value)}}/>
-        <button className="submit" onClick={joinRoom}>Join</button>
-    </div>
-    ) : (
-    <ChatRoom socket={socket} username={username} room={room}/>
-    )}
-
-    </div>
-  );
+    return (
+        <div className="submit-container">
+            {!showChat ? (
+                <div className="join-form">
+                    <h1>Join A Chat</h1>
+                    <br />
+                    <input className="submit" type="text" placeholder="Random Name" onChange={(e) => {setUsername(e.target.value)}}/>
+                    <input className="submit" type="text" placeholder="Room ID" onChange={(e) => {setRoom(e.target.value)}}/>
+                    <button className="submit" onClick={joinRoom}>Join</button>
+                </div>
+            ) : (
+                <ChatRoom socket={socket} username={username} room={room}/>
+            )}
+        </div>
+    );
 };
 
 export default ChatComponent;
