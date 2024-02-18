@@ -2,7 +2,7 @@ body {
   background: linear-gradient(to bottom, #4CAF50, #CDDC39);
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica Neue';
+  font-family: 'Cozy';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -26,20 +26,20 @@ body {
 h1 {
   padding: 0px;
   font-size: 60px;
-  color: black;
+  color: orangered;
   top: 0px;
   margin-top: -10px;
   font-weight: 400;
   margin-bottom: 0px;
   text-align: center;
-  font-family: 'Helvetica Neue';
+  font-family: 'Cozy';
 }
 
 h2 {
   padding: 15px;
   font-size: 40px;
   font-family: 'Helvetica Neue';
-  color: black;
+  color: red;
   font-weight: 100px;
   margin-top: 0;
   margin-bottom: 0px;
@@ -98,9 +98,9 @@ h2 {
   font-size: 30px;
   /* Set the font size */
   text-align: center;
-  background-color: yellowgreen;
+  background-color: yellow;
   /* Set the background color to green */
-  color: white;
+  color: black;
   /* Set the text color to white */
   text-decoration: none;
   /* Remove underline */
@@ -127,7 +127,8 @@ h2 {
 }
 
 .chat-button:hover {
-  background-color: green;
+  background-color: yellowgreen;
+  color: white;
   border: white;
   /* Change background color on hover */
 }
