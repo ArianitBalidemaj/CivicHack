@@ -9,7 +9,8 @@ import Home from './components/Home';
 import Chat from './components/Chat';
 import SignUp from './components/SignUp';
 import './components/Home/index.scss';
-
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 function App() {
   return (

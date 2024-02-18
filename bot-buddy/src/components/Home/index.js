@@ -1,5 +1,4 @@
-// Home.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
 // Import the firebase from the js file
@@ -7,15 +6,25 @@ import { app, auth } from '../../firebase.js';
 import { Navigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-// import current user
 
 const Home = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    useEffect(() => {
+        const unsubscribe = getAuth(app).onAuthStateChanged((user) => {
+            setIsAuthenticated(!!user);
+        });
+
+        return () => unsubscribe();
+    }, []);
+
     return (
         <div className='home-box'>
             <div className="home-content">
                 <h1 className="h1">BotBuddy</h1>
                 <About />
                 <ChatButton />
+
             </div>
         </div>
     );
