@@ -45,4 +45,16 @@
     text-align: center;
     margin-top: auto;
   }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  .logo {
+    width: 40px; 
+    height: 40px; 
+    margin-right: 10px; 
+  }
 }

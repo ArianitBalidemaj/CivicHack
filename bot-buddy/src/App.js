@@ -5,13 +5,9 @@ import Layout from './components/Layout'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Login from './components/Login'
-<<<<<<< Updated upstream
-=======
-import Settings from './components/Settings';
-import React from 'react';
->>>>>>> Stashed changes
 import Home from './components/Home';
 import Chat from './components/Chat';
+import Settings from './components/Settings';
 import SignUp from './components/SignUp';
 import './components/Home/index.scss';
 import firebase from 'firebase/app';
